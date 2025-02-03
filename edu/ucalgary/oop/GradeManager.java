@@ -20,6 +20,9 @@ public class GradeManager {
      * @throws IllegalArgumentException if a student with the same ID already exists.
      */
     public void addStudent(Student student) {
+        if (students == null) {
+            students = new ArrayList<>();
+        }
         for (Student s : students) {
             if (s.getStudentID().equals(student.getStudentID())) {
                 throw new IllegalArgumentException("Student with this ID already exists.");
